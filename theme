@@ -5,7 +5,7 @@ function pfe_med_connect_theme($existing, $type, $theme, $path) {
   return [
     'pfe_med_connect_mail_template' => [
       'variables' => ['values' => NULL],
-      'template' => 'mail_template',
+      'template' => 'pfe_med_connect',  // Use the name of your new Twig file, but without the .html.twig extension
       'path' => $path . '/templates',
     ],
   ];
@@ -19,7 +19,7 @@ function pfe_med_connect_mail($key, &$message, $params) {
     case 'notification':
       $message['subject'] = t('MedConnect: Proposition du corps du message qui sera envoyé au MSL et son backup');
       $message['from'] = 'contact@communication.pfizer.com';
-      // Render the email body from our Twig template
+      // Render the email body from our new Twig template
       $template = \Drupal::theme()->render('pfe_med_connect_mail_template', ['values' => $params['values']]);
       $message['body'][] = $template;
       break;
