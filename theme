@@ -10,3 +10,18 @@ function pfe_med_connect_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_mail().
+ */
+function pfe_med_connect_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'notification':
+      $message['subject'] = t('MedConnect: Proposition du corps du message qui sera envoyé au MSL et son backup');
+      $message['from'] = 'contact@communication.pfizer.com';
+      // Render the email body from our Twig template
+      $template = \Drupal::theme()->render('pfe_med_connect_mail_template', ['values' => $params['values']]);
+      $message['body'][] = $template;
+      break;
+  }
+}
