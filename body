@@ -1,0 +1,18 @@
+Bonjour,
+
+Vous venez de recevoir une sollicitation de la part d’un professionnel de santé exerçant dans votre région. Merci de vérifier la véracité des informations ci-dessous (nom, prénom, RPPS) et prendre contact avec lui dans les plus bref délais.
+
+Civilité : {{ civilite }}
+Prénom : {{ prenom }}
+Nom : {{ nom }}
+Adresse email : {{ email }}
+RPPS : {{ rpps }}
+Pays : {{ pays }}
+Département :  {{ departement }}
+Message : {{ message }}
+
+Bien cordialement,
+Pfizer Médical
+
+Bien à toi,
+Adel
