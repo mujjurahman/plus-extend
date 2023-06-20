@@ -1,20 +1,22 @@
-Bonjour,
+<h1>Bonjour,</h1>
 
+<p>
 Vous venez de recevoir une sollicitation de la part d’un professionnel de santé exerçant dans votre région. Merci de vérifier la véracité des informations ci-dessous (nom, prénom, RPPS) et prendre contact avec lui dans les plus bref délais.
+</p>
 
-Civilité : {{ civilite }}
-Prénom : {{ prenom }}
-Nom : {{ nom }}
-Adresse email : {{ email }}
-RPPS : {{ rpps }}
-Pays : {{ pays }}
-Département :  {{ departement }}
-Message : {{ message }}
+<ul>
+  <li>Civilité : {{ civilite }}</li>
+  <li>Prénom : {{ prenom }}</li>
+  <li>Nom : {{ nom }}</li>
+  <li>Adresse email : {{ email }}</li>
+  <li>RPPS : {{ rpps }}</li>
+  <li>Pays : {{ pays }}</li>
+  <li>Département :  {{ departement }}</li>
+  <li>Message : {{ message }}</li>
+</ul>
 
-Bien cordialement,
-Pfizer Médical
+<p>Bien cordialement,<br>
+Pfizer Médical</p>
 
-Bien à toi,
-Adel
-
-D:\xampp\htdocs\pfpfpfizerfr\app\profiles\pfpfpfizerfr_profile\themes
+<p>Bien à toi,<br>
+Adel</p>
