@@ -1,0 +1,12 @@
+/**
+ * Implements hook_theme().
+ */
+function pfe_med_connect_theme($existing, $type, $theme, $path) {
+  return [
+    'pfe_med_connect_mail_template' => [
+      'variables' => ['values' => NULL],
+      'template' => 'mail_template',
+      'path' => $path . '/templates',
+    ],
+  ];
+}
