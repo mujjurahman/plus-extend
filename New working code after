@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var departmentField = document.getElementById('edit-departement');
+  var telephoneField = document.getElementById('edit-numero-de-telephone');
+
+  departmentField.addEventListener('change', function () {
+    var departmentValue = departmentField.value;
+    console.log('Department Value:', departmentValue);
+
+    setTelephoneCallback(departmentValue);
+  });
+
+  function setTelephoneCallback(departmentValue) {
+    var defaultTelephoneValue = getPrefixForDepartment(departmentValue);
+    console.log('Default Telephone Value:', defaultTelephoneValue);
+
+    // Ensure the telephone value contains only numbers and has a maximum length of 12.
+    var sanitizedValue = defaultTelephoneValue.replace(/\D/g, '').substring(0, 12);
+
+    telephoneField.value = sanitizedValue;
+  }
+
+  function getPrefixForDepartment(departmentValue) {
+    switch (departmentValue) {
+      case '1':
+      case '2':
+      case '3': // Add more cases if needed.
+      case '99':
+        return '+33';
+      case '971':
+        return '+590';
+      case '972':
+        return '+596';
+      default:
+        return '';
+    }
+  }
+});
