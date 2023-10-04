@@ -28,18 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function getPrefixForDepartment(departmentValue) {
-    switch (departmentValue) {
-      case '1':
-      case '2':
-      case '3': // Add more cases if needed.
-      case '99':
-        return '33';
-      case '971':
-        return '590';
-      case '972':
-        return '596';
-      default:
-        return '';
+    if (departmentValue >= 1 && departmentValue <= 95) {
+      return '33';
+    } else if (departmentValue === '971') {
+      return '590';
+    } else if (departmentValue === '972') {
+      return '596';
+    } else {
+      return '';
     }
   }
 });
