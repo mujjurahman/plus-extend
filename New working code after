@@ -1,4 +1,4 @@
-Document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   var departmentField = document.getElementById('edit-departement');
   var telephoneField = document.getElementById('edit-numero-de-telephone');
 
@@ -13,16 +13,18 @@ Document.addEventListener('DOMContentLoaded', function () {
     var defaultTelephoneValue = getPrefixForDepartment(departmentValue);
     console.log('Default Telephone Value:', defaultTelephoneValue);
 
-    // Ensure the telephone value contains only numbers and has a maximum length of 12.
-    var sanitizedValue = defaultTelephoneValue.replace(/\D/g, '').substring(0, 12);
+    // Ensure the telephone value has a maximum length of 12 and starts with a plus sign.
+    var sanitizedValue = '+' + defaultTelephoneValue.replace(/\D/g, '').substring(0, 11);
 
     telephoneField.value = sanitizedValue;
   }
 
-  // Prevent non-numeric input in the telephone field.
+  // Allow only numbers and maintain the placeholder behavior.
   telephoneField.addEventListener('input', function (event) {
     var inputValue = event.target.value;
-    event.target.value = inputValue.replace(/\D/g, '');
+
+    // Allow only numbers and maintain the placeholder behavior.
+    event.target.value = '+' + inputValue.replace(/\D/g, '').substring(0, 11);
   });
 
   function getPrefixForDepartment(departmentValue) {
@@ -31,11 +33,11 @@ Document.addEventListener('DOMContentLoaded', function () {
       case '2':
       case '3': // Add more cases if needed.
       case '99':
-        return '+33';
+        return '33';
       case '971':
-        return '+590';
+        return '590';
       case '972':
-        return '+596';
+        return '596';
       default:
         return '';
     }
