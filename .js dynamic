@@ -1,0 +1,22 @@
+document.addEventListener('DOMContentLoaded', function () {
+  // Attach an event handler to the department field.
+  var departmentField = document.getElementById('edit-departement');
+  var telephoneField = document.getElementById('edit-numero-de-telephone');
+
+  departmentField.addEventListener('change', function () {
+    // Get the selected value of the department field.
+    var departmentValue = departmentField.value;
+
+    // Use the department value as a callback for setting telephone.
+    setTelephoneCallback(departmentValue);
+  });
+
+  // Function to set telephone based on department.
+  function setTelephoneCallback(departmentValue) {
+    // Your custom logic here based on the department value.
+    var telephoneValue = '';  // Replace with your logic.
+
+    // Set the value of the telephone field.
+    telephoneField.value = telephoneValue;
+  }
+});
