@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+Document.addEventListener('DOMContentLoaded', function () {
   var departmentField = document.getElementById('edit-departement');
   var telephoneField = document.getElementById('edit-numero-de-telephone');
 
@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     telephoneField.value = sanitizedValue;
   }
+
+  // Prevent non-numeric input in the telephone field.
+  telephoneField.addEventListener('input', function (event) {
+    var inputValue = event.target.value;
+    event.target.value = inputValue.replace(/\D/g, '');
+  });
 
   function getPrefixForDepartment(departmentValue) {
     switch (departmentValue) {
